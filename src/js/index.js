@@ -5,5 +5,7 @@ window.onload = function() {
 
     body.insertAdjacentHTML('afterbegin', keyboard);
     body.insertAdjacentHTML('afterbegin', textarea);
-    
+
+    const enKeyboard = [];
+
 }
