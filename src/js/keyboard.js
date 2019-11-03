@@ -30,7 +30,7 @@ export default class keyboard {
       this.enUp = [
         ['`', '1', '2','3','4','5','6','7','8','9','0','-','=', 'Backspace'],
         ['Tab','Q', 'W', 'E', 'R', 'T', 'Y','U', 'I', 'O', 'P', '[',']','\\', 'DEL'],
-        ['CapsLock','A','','S','D','F','G','H','J','K','L',';','\'','Enter'],
+        ['CapsLock','A','S','D','F','G','H','J','K','L',';','\'','Enter'],
         ['Shift','Z','X','C','V','B','N','M',',','.','/','▲','Shift',],
         ['Ctrl','Win','Alt','','Alt','◄','▼','►','Ctrl']
       ];
@@ -57,6 +57,7 @@ export default class keyboard {
       
       
       this.fillRows();
+      
   
       document.addEventListener('keydown', (e) => {
         console.log(e.code, " ", e.keyCode)
@@ -82,6 +83,8 @@ export default class keyboard {
         this.clearShift(keyCode);
         this.clearAlt(keyCode);
       })
+      
+      this.specialKeys();
     }
   
     fillRows() {
@@ -94,9 +97,22 @@ export default class keyboard {
         }
       }
     }
-    specialKeys() {
-      if (keyCodes === 8 || ) {
 
+    specialKeys() {
+      for (let i = 0; i < this.keyCodes.length; i++) {
+        if (this.keyCodes[i] == 8 ||
+            this.keyCodes[i] == 9 ||
+            this.keyCodes[i] == 46 ||
+            this.keyCodes[i] == 20 ||
+            this.keyCodes[i] == 13 ||
+            this.keyCodes[i] == 16 ||
+            this.keyCodes[i] == 17 ||
+            this.keyCodes[i] == 91 ||
+            this.keyCodes[i] == 18 ||
+            this.keyCodes[i] == 32) {
+              
+              
+          }
       }
     }
   
