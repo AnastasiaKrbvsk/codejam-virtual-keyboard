@@ -15,6 +15,7 @@ textarea {
     margin: 0 auto;
     width: 1000px;
 }
+
 .key-definition {
     display: flex;
     justify-content: center;
@@ -27,17 +28,27 @@ textarea {
     height: 50px;
 
     background-color: #646b75;
-    border-radius: 3px;
+    border-radius: 6px;
 
     font-family: "Arial";
     color: white;
 }
-.clearfix {
-    clear: both;
-    display: block;
-    width: 100%;
-  }
-  .special-key {
-    text-transform: lowercase;
-    background: #46494e;
-  }
+.key-definition:hover {
+    background-color: #6c757e;
+}
+
+.key-definition:active {
+    border-radius: 10px;
+    background-color: #385168;
+}
+
+
+.special-key {
+text-transform: lowercase;
+background: #46494e;
+}
+  
+.active {
+    border-radius: 10px;
+    background-color: #385168;
+}

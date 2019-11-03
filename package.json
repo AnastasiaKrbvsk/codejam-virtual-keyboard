@@ -1,0 +1,28 @@
+{
+  "name": "keyboard-webpack",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard.git"
+  },
+  "keywords": [
+    "javascrips",
+    "js",
+    "webpack"
+  ],
+  "author": "Anastasia KArbovskaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
