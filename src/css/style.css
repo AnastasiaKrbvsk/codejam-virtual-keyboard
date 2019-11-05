@@ -1,58 +1,7 @@
-/* textarea {
-    width: 1000px;
-    height: 150px;
-    margin: 50px auto;
-}
-#keyboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 1000px;
-}
-
-.key-definition {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 3px;
-    padding: 3px;
-
-    width: 50px;
-    height: 50px;
-
-    background-color: #646b75;
-    border-radius: 6px;
-
-    font-family: "Arial";
-    color: white;
-}
-.key-definition:hover {
-    background-color: #6c757e;
-}
-
-.key-definition:active {
-    border-radius: 10px;
-    background-color: #385168;
-}
-
-
-.special-key {
-text-transform: lowercase;
-background: #46494e;
-}
-  
-.active {
-    border-radius: 10px;
-    background-color: #385168;
-} */
-
 textarea {
     width: 1000px;
     height: 150px;
-    margin: 50px 10%;
+    margin: 40px 10%;
   }
   
   .keyboard-container {
@@ -65,8 +14,8 @@ textarea {
   }
   .row {
     display: flex;
-    height: 50px;
-    margin-bottom: 10px;
+    height: 60px;
+    margin-bottom: 5px;
   }
   
   .key {
@@ -86,26 +35,30 @@ textarea {
     font-family: "Arial";
     color: white;
   }
-  
+
   .key:hover {
     cursor: pointer;
     background-color: #6c757e;
   }
   
   .keydown {
-    border-radius: 15px; 
+    border-radius: 10px; 
     background:  #385168;
   }
-  
-  
+  .caps, .shift, .backspace, .enter, .tab {
+    width: 80px;
+  }
+  .control {
+    background: #46494e;
+  }
+  .space {
+    width: 365px;
+    background: #46494e;
+  }  
   .active {
-    border-radius: 15px; 
+    border-radius: 10px; 
     background:  #646b75;
   }
 
-  .special-key {
-    text-transform: lowercase;
-    background: #46494e;
-  }
   
   

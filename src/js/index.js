@@ -7,4 +7,5 @@ let textArea = document.createElement('textarea');
 document.body.append(wrapper);
 wrapper.prepend(textArea);
 
-let board = new keyboard(wrapper);
+let board = new keyboard(wrapper, textArea);
+board.render();
