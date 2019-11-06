@@ -6,6 +6,8 @@ wrapper.classList.add('wrapper');
 let textArea = document.createElement('textarea');
 document.body.append(wrapper);
 wrapper.prepend(textArea);
+textArea.focus();
 
-let board = new keyboard(wrapper, textArea);
+let board = new keyboard(wrapper);
 board.render();
+

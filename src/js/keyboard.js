@@ -1,4 +1,3 @@
-
 import Key from "./Key";
 
 
@@ -47,7 +46,7 @@ export default class keyboard {
       language: "ru",
       capsLock: false,
       shift: false,
-      alt: false,
+      alt: false
     }
    
 
@@ -63,7 +62,7 @@ export default class keyboard {
 
     document.addEventListener('keydown', (e) => {
       let keyCode = e.keyCode;
-      let targetDiv = document.getElementById(keyCode)
+      let targetDiv = document.getElementById(keyCode);
       if (targetDiv === null) {
         return;
       }
@@ -80,12 +79,17 @@ export default class keyboard {
       if (targetDiv === null) {
         return;
       }
+      e.preventDefault();
       targetDiv.classList.remove("keydown");
       this.clearShift(keyCode);
       this.clearAlt(keyCode);
     })
     
     this.specialKeys();
+  }
+
+  languageFun() {
+    localStorage.getItem('lang') ? localStorage.getItem('lang') : "ru";
   }
 
   fillRows() {
