@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard#readme",
   "devDependencies": {
+    "eslint": "^6.6.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
