@@ -34,7 +34,6 @@ export default class Key {
     if (language === 'en' && capsState !== shiftState) {
       this.child.innerText = this.valueEnUp;
     }
-
     if (capsState === true && this.keyCode === 20) {
       this.button.classList.add('active');
     }

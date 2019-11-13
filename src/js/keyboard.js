@@ -48,6 +48,8 @@ export default class keyboard {
       alt: false,
     };
 
+    // let lang = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'ru';
+
     this.keys = [];
     this.container = document.createElement('div');
     this.container.classList.add('keyboard-container');
@@ -55,6 +57,7 @@ export default class keyboard {
 
     this.fillRows();
     keyboard.SpecialKeys();
+    this.languageFun();
 
     document.addEventListener('keydown', (e) => {
       const [keyCode] = e.keyCode;
@@ -82,10 +85,14 @@ export default class keyboard {
     });
 
     this.specialKeys();
-  }
 
-  languageFun() {
-    return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'ru';
+    window.addEventListener('beforeunload', () => {
+      if (this.state.language === 'ru') {
+        localStorage.setItem('lang', 'ru');
+      } else {
+        localStorage.setItem('lang', 'en');
+      }
+    });
   }
 
   fillRows() {
@@ -139,14 +146,12 @@ export default class keyboard {
     if (keyCode !== 18 && keyCode !== 16) {
       return;
     }
-
     if (!this.state.shift) {
       return;
     }
     if (!this.state.alt) {
       return;
     }
-
     if (this.state.language === 'ru') {
       this.state.language = 'en';
     } else {
@@ -155,6 +160,8 @@ export default class keyboard {
 
     this.render();
   }
+
+  /* Для специальных клавиш */
 
   static SpecialKeys() {
     const space = document.getElementById('32');
