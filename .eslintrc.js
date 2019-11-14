@@ -13,6 +13,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"]
+        "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"],
+        "prefer-destructuring": ["error", {"object": false, "array": true}]
     }
 };

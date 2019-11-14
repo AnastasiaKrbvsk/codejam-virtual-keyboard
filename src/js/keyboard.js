@@ -1,5 +1,6 @@
 import Key from './key';
 
+
 export default class keyboard {
   constructor(parent) {
     this.ruLow = [
@@ -42,13 +43,11 @@ export default class keyboard {
     ];
     this.parent = parent;
     this.state = {
-      language: 'ru',
+      language: 'ru' || localStorage.getItem('lang'),
       capsLock: false,
       shift: false,
       alt: false,
     };
-
-    // let lang = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'ru';
 
     this.keys = [];
     this.container = document.createElement('div');
@@ -57,10 +56,10 @@ export default class keyboard {
 
     this.fillRows();
     keyboard.SpecialKeys();
-    this.languageFun();
+
 
     document.addEventListener('keydown', (e) => {
-      const [keyCode] = e.keyCode;
+      const keyCode = e.keyCode;
       const targetDiv = document.getElementById(keyCode);
       if (targetDiv === null) {
         return;
@@ -73,7 +72,7 @@ export default class keyboard {
     });
 
     document.addEventListener('keyup', (e) => {
-      const [keyCode] = e.keyCode;
+      const keyCode = e.keyCode;
       const targetDiv = document.getElementById(keyCode);
       if (targetDiv === null) {
         return;
@@ -85,14 +84,6 @@ export default class keyboard {
     });
 
     this.specialKeys();
-
-    window.addEventListener('beforeunload', () => {
-      if (this.state.language === 'ru') {
-        localStorage.setItem('lang', 'ru');
-      } else {
-        localStorage.setItem('lang', 'en');
-      }
-    });
   }
 
   fillRows() {
@@ -101,8 +92,8 @@ export default class keyboard {
       this.row.classList.add('row');
       this.container.append(this.row);
       for (let j = 0; j < this.ruLow[i].length; j += 1) {
-        this.keys.push(new Key(this.ruLow[i][j], this.ruUp[i][j], this.enLow[i][j],
-          this.enUp[i][j], this.keyCodes[i][j], this.row));
+        this.keys.push(new Key(this.ruLow[i][j], this.ruUp[i][j],
+          this.enLow[i][j], this.enUp[i][j], this.keyCodes[i][j], this.row));
       }
     }
   }
@@ -143,13 +134,7 @@ export default class keyboard {
   }
 
   toggleLanguage(keyCode) {
-    if (keyCode !== 18 && keyCode !== 16) {
-      return;
-    }
-    if (!this.state.shift) {
-      return;
-    }
-    if (!this.state.alt) {
+    if ((keyCode !== 18 && keyCode !== 16) || !this.state.shift || !this.state.alt) {
       return;
     }
     if (this.state.language === 'ru') {
@@ -158,10 +143,9 @@ export default class keyboard {
       this.state.language = 'ru';
     }
 
+    localStorage.setItem('lang', this.state.language);
     this.render();
   }
-
-  /* Для специальных клавиш */
 
   static SpecialKeys() {
     const space = document.getElementById('32');
