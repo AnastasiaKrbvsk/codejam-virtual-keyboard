@@ -1,0 +1,32 @@
+{
+  "name": "keyboard-webpack",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/js/keyboard.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard.git"
+  },
+  "keywords": [
+    "javascrips",
+    "js",
+    "webpack"
+  ],
+  "author": "Anastasia KArbovskaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/AnastasiaKrbvsk/codejam-virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

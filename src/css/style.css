@@ -1,0 +1,64 @@
+textarea {
+    width: 1000px;
+    height: 150px;
+    margin: 40px 10%;
+  }
+  
+  .keyboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .row {
+    display: flex;
+    height: 60px;
+    margin-bottom: 5px;
+  }
+  
+  .key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3px;
+    padding: 3px;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: #646b75;
+    border-radius: 6px;
+
+    font-family: "Arial";
+    color: white;
+  }
+
+  .key:hover {
+    cursor: pointer;
+    background-color: #6c757e;
+  }
+  
+  .keydown {
+    border-radius: 10px; 
+    background:  #385168;
+  }
+  .caps, .shift, .backspace, .enter, .tab {
+    width: 80px;
+  }
+  .control {
+    background: #46494e;
+  }
+  .space {
+    width: 365px;
+    background: #46494e;
+  }  
+  .active {
+    border-radius: 10px; 
+    background:  #646b75;
+  }
+
+  
+  
